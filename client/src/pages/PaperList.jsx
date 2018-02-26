@@ -17,9 +17,19 @@ const PaperList = () => {
           id='background'
           className='absolute right-0 h-screen w-screen bg-[#00000030]'
           onClick={() => setShowModal(false)}></div>
-        <div className='absolute top-[15vh] right-[50%] w-[21rem] translate-x-1/2 rounded-lg bg-yellow-100 shadow-2xl se:h-[30rem] mobileSm:h-[40rem] mobileMd:h-[45rem] mobileMd:w-[30rem]'>
-          <div className='p-12'>
+        <div className='absolute top-[15vh] right-[50%] w-[21rem] translate-x-1/2 rounded-lg bg-yellow-100 px-6 shadow-2xl se:h-[30rem] mobileSm:h-[40rem] mobileMd:h-[45rem] mobileMd:w-[30rem]'>
+          <div className='pt-6 pb-6'>
             <img src={coding} className='h-full w-full rounded-lg' />
+          </div>
+          <div className=''>
+            <p className='mb-2 overflow-scroll scrollbar-hide se:max-h-[8rem] mobileSm:max-h-[17rem] mobileMd:max-h-[14.3rem]'>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis vero, excepturi ducimus officiis, aspernatur, adipisci
+              nihil quaerat reiciendis tenetur molestias architecto aliquid
+              recusandae eligendi facilis consequatur esse hic quae
+              exercitationem.
+            </p>
+            <p className='pr-1 text-right font-semibold'>멋쟁이가</p>
           </div>
         </div>
       </>
@@ -112,12 +122,12 @@ const PaperList = () => {
           </div>
         </div>
         <span onClick={() => setShowModal(true)}>
-          {showModal ? (
+          {showModal ? undefined : (
             <HiOutlinePencilSquare
               size='48'
               className='fixed right-9 bottom-10'
             />
-          ) : undefined}
+          )}
         </span>
       </div>
       {showModal ? <Modal /> : undefined}
