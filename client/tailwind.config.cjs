@@ -2,7 +2,12 @@
 module.exports = {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        se: { max: '375px' },
+        mobile: { min: '376px' },
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),

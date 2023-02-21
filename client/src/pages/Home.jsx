@@ -29,7 +29,7 @@ const Home = () => {
   };
 
   return (
-    <div className='flex h-[100vh] w-[100vw] flex-col justify-between'>
+    <div className='mx-auto flex h-[100vh] w-[100vw] max-w-[800px] flex-col justify-between'>
       <div id='nav' className='flex h-12 justify-between'>
         <div className=''>
           <span className='inline-block h-12 w-12 '>
@@ -50,7 +50,9 @@ const Home = () => {
         <div className='h-12 w-12'></div>
       </div>
       <div className='mx-4'>
-        <div id='profile-img' className='mx-auto mt-8 mb-3 max-w-[380px]'>
+        <div
+          id='profile-img'
+          className='mx-auto mt-8 mb-3 sm:max-w-[540px] se:max-w-[250px]'>
           <img
             src={coding}
             alt='Profile Image'
@@ -75,7 +77,7 @@ const Home = () => {
         </div>
       </div>
       <div id='enter' className='mx-4 mb-6 flex justify-center'>
-        <button className='h-[60px] w-full max-w-[380px] border-2 border-black text-3xl font-semibold'>
+        <button className='h-[60px] w-full max-w-[540px] rounded-md bg-blue-600 text-3xl font-semibold text-white'>
           ENTER
         </button>
       </div>
