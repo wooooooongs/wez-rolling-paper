@@ -31,52 +31,54 @@ const Home = () => {
 
   return (
     <div className='mx-auto flex h-screen w-screen max-w-[800px] flex-col justify-between overflow-hidden'>
-      <div id='nav' className='flex h-12 justify-between'>
-        <div id='go-to-member-list'>
-          <span className='inline-block h-12 w-12'>
-            <Link to='member-list'>
-              <RiMenuLine size='24' className='ml-4 mt-3' />
-            </Link>
-          </span>
+      <div>
+        <div id='nav' className='flex h-12 justify-between'>
+          <div id='go-to-member-list'>
+            <span className='inline-block h-12 w-12'>
+              <Link to='member-list'>
+                <RiMenuLine size='24' className='ml-4 mt-3' />
+              </Link>
+            </span>
+          </div>
+          <div id='date-selector'>
+            <span>
+              <RiArrowLeftSFill size='52' className='inline-block pb-1' />
+            </span>
+            <span className='mx-3 inline-block h-full align-sub text-3xl'>
+              2023.02
+            </span>
+            <span>
+              <RiArrowRightSFill size='52' className='inline-block pb-1' />
+            </span>
+          </div>
+          <div className='h-12 w-12'></div>
         </div>
-        <div id='date-selector'>
-          <span>
-            <RiArrowLeftSFill size='52' className='inline-block pb-1' />
-          </span>
-          <span className='mx-3 inline-block h-full align-sub text-3xl'>
-            2023.02
-          </span>
-          <span>
-            <RiArrowRightSFill size='52' className='inline-block pb-1' />
-          </span>
-        </div>
-        <div className='h-12 w-12'></div>
-      </div>
-      <div className='mx-4'>
-        <div
-          id='profile-img'
-          className='mx-auto mt-8 mb-3 sm:max-w-[540px] se:max-w-[250px]'>
-          <img
-            src={coding}
-            alt='Profile Image'
-            className='w-full rounded-2xl'
-          />
-        </div>
-        <div id='dots' className='mb-8 flex justify-center gap-0.5'>
-          {dotArr.map((num, index) => (
-            <Dot key={num} dotNum={index} />
-          ))}
-        </div>
-        <div className='flex flex-col items-center'>
-          <p id='data' className='text-3xl'>
-            06 / 06
-          </p>
-          <p id='name' className='text-[2.5rem]'>
-            Lee Jae Woong
-          </p>
-        </div>
-        <div id='wez-logo' className=''>
-          <img src={wez_logo} className='mx-auto w-[20vh]' />
+        <div className='mx-4'>
+          <div
+            id='profile-img'
+            className='mx-auto mt-8 mb-3 sm:max-w-[540px] se:max-w-[250px]'>
+            <img
+              src={coding}
+              alt='Profile Image'
+              className='w-full rounded-2xl'
+            />
+          </div>
+          <div id='dots' className='mb-8 flex justify-center gap-0.5'>
+            {dotArr.map((num, index) => (
+              <Dot key={num} dotNum={index} />
+            ))}
+          </div>
+          <div className='flex flex-col items-center'>
+            <p id='data' className='text-3xl'>
+              06 / 06
+            </p>
+            <p id='name' className='text-[2.5rem]'>
+              Lee Jae Woong
+            </p>
+          </div>
+          <div id='wez-logo' className=''>
+            <img src={wez_logo} className='mx-auto w-[20vh]' />
+          </div>
         </div>
       </div>
       <div id='enter' className='mx-4 mb-6 flex justify-center'>
