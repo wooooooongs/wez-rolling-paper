@@ -7,8 +7,9 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
+    'plugin:prettier/recommended',
     'airbnb',
-    'prettier/react',
+    ,
   ],
   overrides: [],
   parserOptions: {
@@ -31,4 +32,4 @@ module.exports = {
     'no-console': 0,
     'react/prop-types': 'off',
   },
-}
+};
