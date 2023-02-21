@@ -1,5 +1,6 @@
 import React from 'react';
 import tw from 'tailwind-styled-components';
+import { Link } from 'react-router-dom';
 
 import {
   RiMenuLine,
@@ -29,11 +30,13 @@ const Home = () => {
   };
 
   return (
-    <div className='mx-auto flex h-[100vh] w-[100vw] max-w-[800px] flex-col justify-between'>
+    <div className='mx-auto flex h-screen w-screen max-w-[800px] flex-col justify-between overflow-hidden'>
       <div id='nav' className='flex h-12 justify-between'>
-        <div className=''>
-          <span className='inline-block h-12 w-12 '>
-            <RiMenuLine size='24' className='ml-4 mt-3' />
+        <div id='go-to-member-list'>
+          <span className='inline-block h-12 w-12'>
+            <Link to='member-list'>
+              <RiMenuLine size='24' className='ml-4 mt-3' />
+            </Link>
           </span>
         </div>
         <div id='date-selector'>
