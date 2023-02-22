@@ -5,8 +5,15 @@ import { FaStop, FaPlay, FaPause } from 'react-icons/fa';
 
 const Cover = () => {
   return (
-    <div className='mx-auto flex h-screen w-screen max-w-[800px] flex-col justify-between overflow-hidden'>
-      <div id='happyBirthday'>
+    <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden'>
+      <div id='back-to-home' className='fixed'>
+        <Link to='/'>
+          <span className='inline-block h-12 w-12 '>
+            <RiHome5Line size='28' className='ml-4 mt-3' />
+          </span>
+        </Link>
+      </div>
+      <div id='happyBirthday' className='max-h-[17vh] mobileMd:max-h-[23vh]'>
         <div className='mx-auto se:max-w-[300px] mobileSm:max-w-[400px] mobileMd:max-w-[500px]'>
           <img src={coverHB} className='' />
         </div>
