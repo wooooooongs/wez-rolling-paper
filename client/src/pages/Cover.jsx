@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import tw from 'tailwind-styled-components';
 
 import coverExample from '../assets/cover/cover-example.png';
 import coverHB from '../assets/cover/HB.png';
@@ -26,38 +27,34 @@ const Cover = () => {
           </span>
           <div className='flex flex-col items-center'>
             <p className='mb-5 text-3xl'>작성자 비밀번호 입력</p>
-            <div className='flex gap-4'>
-              <input
+            <div className='flex gap-5'>
+              <PasswordInput
                 type='tel'
                 inputMode='numeric'
                 maxLength='1'
                 min='0'
                 max='9'
-                className='disc h-12 w-12 rounded-md border-t-2 border-l-2 border-[#9a9a9a] bg-[#f0f1f4] text-center caret-transparent focus:outline-none'
               />
-              <input
+              <PasswordInput
                 type='tel'
                 inputMode='numeric'
                 maxLength='1'
                 min='0'
                 max='9'
-                className='disc h-12 w-12 rounded-md border-t-2 border-l-2 border-[#9a9a9a] bg-[#f0f1f4] text-center caret-transparent focus:outline-none'
               />
-              <input
+              <PasswordInput
                 type='tel'
                 inputMode='numeric'
                 maxLength='1'
                 min='0'
                 max='9'
-                className='disc h-12 w-12 rounded-md border-t-2 border-l-2 border-[#9a9a9a] bg-[#f0f1f4] text-center caret-transparent focus:outline-none'
               />
-              <input
+              <PasswordInput
                 type='tel'
                 inputMode='numeric'
                 maxLength='1'
                 min='0'
                 max='9'
-                className='disc h-12 w-12 rounded-md border-t-2 border-l-2 border-[#9a9a9a] bg-[#f0f1f4] text-center caret-transparent focus:outline-none'
               />
             </div>
           </div>
@@ -106,5 +103,9 @@ const Cover = () => {
     </div>
   );
 };
+
+const PasswordInput = tw.input`
+  leading-10 text-3xl font-semibold h-12 w-12 border-b-2 border-[#9a9a9a] text-center caret-transparent focus:outline-none
+`;
 
 export default Cover;
