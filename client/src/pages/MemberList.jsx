@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -66,7 +65,7 @@ const MemberList = () => {
   ];
 
   return (
-    <div className='mx-auto flex h-screen w-screen max-w-[800px] flex-col justify-between overflow-hidden'>
+    <div className='mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden'>
       <div>
         <div id='nav' className='mb-12 flex h-12 justify-between'>
           <div id='back-to-home'>

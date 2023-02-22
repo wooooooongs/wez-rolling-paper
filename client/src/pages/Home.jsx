@@ -29,7 +29,7 @@ const Home = () => {
   };
 
   return (
-    <div className='mx-auto flex h-screen w-screen max-w-[800px] flex-col justify-between overflow-hidden'>
+    <div className='mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden'>
       <div>
         <div id='nav' className='flex h-12 justify-between'>
           <div id='go-to-member-list'>

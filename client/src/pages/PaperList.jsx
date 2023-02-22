@@ -67,7 +67,7 @@ const PaperList = () => {
   ];
 
   return (
-    <div className='mx-auto flex h-screen w-screen max-w-[800px] flex-col justify-between overflow-hidden bg-yellow-50'>
+    <div className='mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden bg-yellow-50'>
       <div id='back-to-home' className='fixed'>
         <span className='inline-block h-12 w-12'>
           <RiArrowGoBackLine size='28' className='ml-4 mt-3' />
