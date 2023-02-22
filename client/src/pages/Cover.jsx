@@ -1,9 +1,71 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import coverExample from '../assets/cover/cover-example.png';
 import coverHB from '../assets/cover/HB.png';
 import coding from '../assets/profile-img/coding.png';
 import { FaStop, FaPlay, FaPause } from 'react-icons/fa';
+import { RxCross1 } from 'react-icons/rx';
+import { RiHome5Line } from 'react-icons/ri';
 
 const Cover = () => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const Modal = () => {
+    return (
+      <>
+        <div
+          id='background'
+          className='absolute right-0 h-screen w-full bg-[#00000090]'
+          onClick={() => setOpenModal(false)}></div>
+        <div className='absolute right-0 bottom-0 h-[28vh] w-full bg-white pt-[5vh]'>
+          <span
+            className='absolute right-3 top-3'
+            onClick={() => setOpenModal(false)}>
+            <RxCross1 size='26' />
+          </span>
+          <div className='flex flex-col items-center'>
+            <p className='mb-5 text-3xl'>작성자 비밀번호 입력</p>
+            <div className='flex gap-4'>
+              <input
+                type='tel'
+                inputMode='numeric'
+                maxLength='1'
+                min='0'
+                max='9'
+                className='disc h-12 w-12 rounded-md border-t-2 border-l-2 border-[#9a9a9a] bg-[#f0f1f4] text-center caret-transparent focus:outline-none'
+              />
+              <input
+                type='tel'
+                inputMode='numeric'
+                maxLength='1'
+                min='0'
+                max='9'
+                className='disc h-12 w-12 rounded-md border-t-2 border-l-2 border-[#9a9a9a] bg-[#f0f1f4] text-center caret-transparent focus:outline-none'
+              />
+              <input
+                type='tel'
+                inputMode='numeric'
+                maxLength='1'
+                min='0'
+                max='9'
+                className='disc h-12 w-12 rounded-md border-t-2 border-l-2 border-[#9a9a9a] bg-[#f0f1f4] text-center caret-transparent focus:outline-none'
+              />
+              <input
+                type='tel'
+                inputMode='numeric'
+                maxLength='1'
+                min='0'
+                max='9'
+                className='disc h-12 w-12 rounded-md border-t-2 border-l-2 border-[#9a9a9a] bg-[#f0f1f4] text-center caret-transparent focus:outline-none'
+              />
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  };
+
   return (
     <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden'>
       <div id='back-to-home' className='fixed'>
@@ -37,9 +99,10 @@ const Cover = () => {
           </span>
         </div>
       </div>
-      <div id='cake'>
+      <div id='cake' onClick={() => setOpenModal(true)}>
         <img src={coverExample} className='w-full' />
       </div>
+      {openModal && <Modal />}
     </div>
   );
 };
