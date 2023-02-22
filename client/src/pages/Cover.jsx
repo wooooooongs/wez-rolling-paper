@@ -10,7 +10,7 @@ import { RxCross1 } from 'react-icons/rx';
 import { RiHome5Line } from 'react-icons/ri';
 
 const Cover = () => {
-  const [openModal, setOpenModal] = useState(false);
+  const [showModal, setOpenModal] = useState(false);
 
   const Modal = () => {
     return (
@@ -67,7 +67,7 @@ const Cover = () => {
 
   return (
     <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden'>
-      <div className={openModal && 'blur-[2.5px]'}>
+      <div className={showModal && 'blur-[2.5px]'}>
         <div id='back-to-home' className='fixed'>
           <Link to='/'>
             <span className='inline-block h-12 w-12 '>
@@ -105,7 +105,7 @@ const Cover = () => {
           <img src={coverExample} className='w-full' />
         </div>
       </div>
-      {openModal && <Modal />}
+      {showModal && <Modal />}
     </div>
   );
 };
