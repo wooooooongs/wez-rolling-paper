@@ -26,7 +26,9 @@ const Cover = () => {
             <RxCross1 size='26' />
           </span>
           <div className='flex flex-col items-center'>
-            <p className='mb-5 text-3xl'>작성자 비밀번호 입력</p>
+            <Link to='/paper-list'>
+              <p className='mb-5 text-3xl'>작성자 비밀번호 입력</p>
+            </Link>
             <div className='flex gap-5'>
               <PasswordInput
                 type='tel'
