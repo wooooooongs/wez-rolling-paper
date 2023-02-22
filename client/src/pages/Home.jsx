@@ -1,4 +1,3 @@
-import React from 'react';
 import tw from 'tailwind-styled-components';
 import { Link } from 'react-router-dom';
 
@@ -34,11 +33,11 @@ const Home = () => {
       <div>
         <div id='nav' className='flex h-12 justify-between'>
           <div id='go-to-member-list'>
-            <span className='inline-block h-12 w-12'>
-              <Link to='member-list'>
+            <Link to='member-list'>
+              <span className='inline-block h-12 w-12'>
                 <RiMenuLine size='24' className='ml-4 mt-3' />
-              </Link>
-            </span>
+              </span>
+            </Link>
           </div>
           <div id='date-selector'>
             <span>
@@ -56,7 +55,7 @@ const Home = () => {
         <div className='mx-4'>
           <div
             id='profile-img'
-            className='mx-auto mt-8 mb-3 sm:max-w-[540px] se:max-w-[250px]'>
+            className='mx-auto mt-8 mb-3 se:max-w-[250px] mobileSm:max-w-[540px] mobileMd:max-w-[550px]'>
             <img
               src={coding}
               alt='Profile Image'
@@ -81,11 +80,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div id='enter' className='mx-4 mb-6 flex justify-center'>
-        <button className='h-[60px] w-full max-w-[540px] rounded-md bg-blue-600 text-3xl font-semibold text-white'>
-          ENTER
-        </button>
-      </div>
+      <Link to='cover'>
+        <div id='enter' className='mx-4 mb-6 flex justify-center'>
+          <button className='h-[60px] w-full max-w-[540px] rounded-md bg-blue-600 text-3xl font-semibold text-white'>
+            ENTER
+          </button>
+        </div>
+      </Link>
     </div>
   );
 };
