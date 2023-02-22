@@ -92,13 +92,13 @@ const PaperList = () => {
         <div className='mt-7 text-center text-4xl font-semibold'>
           To. 미니미니
         </div>
-        <div className='mx-auto h-screen max-w-[425px] py-9'>
+        <div className='mx-auto h-screen py-9 mobileMd:max-w-[545px]'>
           <div className='mx-5 grid max-h-[85vh] grid-cols-2 place-items-center gap-x-2 gap-y-5 overflow-scroll scrollbar-hide'>
             {DATA_ARRAY.map((data, index) => {
               return (
                 <div
                   key={index}
-                  className='h-[152px] w-[152px] rounded-2xl bg-gray-300 px-3 pt-3 pb-2'>
+                  className='aspect-square max-w-[152px] rounded-2xl bg-gray-300 px-3 pt-3 pb-2 mobileMd:max-w-[225px]'>
                   <div className='h-[80%]'>
                     <span className='text-sm line-clamp-5'>{data.context}</span>
                   </div>
