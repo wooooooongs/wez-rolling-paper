@@ -10,7 +10,7 @@ import { RxCross1 } from 'react-icons/rx';
 import { RiHome5Line } from 'react-icons/ri';
 
 const Cover = () => {
-  const [showModal, setOpenModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const Modal = () => {
     return (
@@ -18,11 +18,11 @@ const Cover = () => {
         <div
           id='background'
           className='absolute right-0 h-screen w-full bg-[#00000070]'
-          onClick={() => setOpenModal(false)}></div>
+          onClick={() => setShowModal(false)}></div>
         <div className='absolute right-0 bottom-0 h-[28vh] w-full bg-white pt-[5vh]'>
           <span
             className='absolute right-3 top-3'
-            onClick={() => setOpenModal(false)}>
+            onClick={() => setShowModal(false)}>
             <RxCross1 size='26' />
           </span>
           <div className='flex flex-col items-center'>
@@ -101,7 +101,7 @@ const Cover = () => {
             </span>
           </div>
         </div>
-        <div id='cake' onClick={() => setOpenModal(true)}>
+        <div id='cake' onClick={() => setShowModal(true)}>
           <img src={coverExample} className='w-full' />
         </div>
       </div>
