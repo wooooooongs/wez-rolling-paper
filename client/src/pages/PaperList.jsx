@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { HiOutlinePencilSquare } from 'react-icons/hi2';
+import coding from '../assets/profile-img/coding.png';
 
 const PaperList = () => {
   const [showModal, setShowModal] = useState(false);
@@ -14,10 +15,12 @@ const PaperList = () => {
       <>
         <div
           id='background'
-          className='absolute right-0 h-screen w-screen bg-[#00000070]'
+          className='absolute right-0 h-screen w-screen bg-[#00000030]'
           onClick={() => setShowModal(false)}></div>
-        <div className='absolute top-[15vh] right-[50%] h-[32rem] w-[21rem] translate-x-1/2 rounded-lg bg-yellow-100 shadow-2xl'>
-          <div>hello</div>
+        <div className='absolute top-[15vh] right-[50%] w-[21rem] translate-x-1/2 rounded-lg bg-yellow-100 shadow-2xl se:h-[30rem] mobileSm:h-[40rem] mobileMd:h-[45rem] mobileMd:w-[30rem]'>
+          <div className='p-12'>
+            <img src={coding} className='h-full w-full rounded-lg' />
+          </div>
         </div>
       </>
     );
@@ -82,8 +85,8 @@ const PaperList = () => {
   ];
 
   return (
-    <div className='relative  mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden bg-yellow-50'>
-      <div className={showModal && 'blur-[2.5px]'}>
+    <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden bg-yellow-50'>
+      <div className={showModal && 'blur-[1.875px]'}>
         <div id='back-to-home' className='fixed'>
           <span className='inline-block h-12 w-12' onClick={() => navigate(-1)}>
             <RiArrowGoBackLine size='28' className='ml-4 mt-3' />
