@@ -86,7 +86,7 @@ const PaperList = () => {
 
   return (
     <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden bg-yellow-50'>
-      <div className={showModal && 'blur-[1.875px]'}>
+      <div className={showModal ? 'blur-[1.875px]' : ''}>
         <div id='back-to-home' className='fixed'>
           <span className='inline-block h-12 w-12' onClick={() => navigate(-1)}>
             <RiArrowGoBackLine size='28' className='ml-4 mt-3' />
@@ -112,15 +112,15 @@ const PaperList = () => {
           </div>
         </div>
         <span onClick={() => setShowModal(true)}>
-          {showModal || (
+          {showModal ? (
             <HiOutlinePencilSquare
               size='48'
               className='fixed right-9 bottom-10'
             />
-          )}
+          ) : undefined}
         </span>
       </div>
-      {showModal && <Modal />}
+      {showModal ? <Modal /> : undefined}
     </div>
   );
 };
