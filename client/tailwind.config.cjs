@@ -7,6 +7,7 @@ module.exports = {
         se: { max: '375px' },
         mobileSm: { min: '376px', max: '768px' },
         mobileMd: { min: '769px' },
+        pc: { min: '1024px' },
       },
     },
   },
