@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import tw from 'tailwind-styled-components';
 
-import coverExample from '../assets/cover/cover-example.png';
 import coverHB from '../assets/cover/HB.png';
-import coding from '../assets/profile-img/coding.png';
+import lpCover from '../assets/cover/lp.png';
 import { FaStop, FaPlay, FaPause } from 'react-icons/fa';
 import { RxCross1 } from 'react-icons/rx';
 import { RiHome5Line } from 'react-icons/ri';
@@ -66,11 +65,11 @@ const Cover = () => {
   };
 
   return (
-    <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden'>
+    <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden bg-paper bg-cover bg-no-repeat'>
       <div className={showModal ? 'blur-[2.5px]' : ''}>
         <div id='back-to-home' className='fixed'>
           <Link to='/'>
-            <span className='inline-block h-12 w-12 '>
+            <span className='inline-block h-12 w-12'>
               <RiHome5Line size='28' className='ml-4 mt-3' />
             </span>
           </Link>
