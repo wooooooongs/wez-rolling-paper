@@ -51,42 +51,44 @@ const Home = () => {
         </div>
         <div className='h-12 w-12'></div>
       </header>
-      <main className='mx-4'>
-        <div
-          id='profile-img'
-          className='mx-auto mt-8 mb-3 aspect-9/10 se:aspect-square se:max-w-[250px] mobileSm:max-w-[340px] mobileMd:aspect-square mobileMd:max-w-[460px] pc:max-w-[320px]'>
-          <img
-            src={coding}
-            alt='Profile Image'
-            className='h-full w-full rounded-2xl object-cover'
-          />
+      <main className='relative mx-4 mb-6 flex h-screen flex-col justify-between'>
+        <div>
+          <div
+            id='profile-img'
+            className='mx-auto mt-8 mb-3 aspect-9/10 se:aspect-square se:max-w-[250px] mobileSm:max-w-[340px] mobileMd:aspect-square mobileMd:max-w-[460px] pc:max-w-[320px]'>
+            <img
+              src={coding}
+              alt='Profile Image'
+              className='h-full w-full rounded-2xl object-cover'
+            />
+          </div>
+          <div id='dots' className='mb-8 flex justify-center gap-0.5'>
+            {dotArr.map((num, index) => (
+              <Dot key={num} dotNum={index} />
+            ))}
+          </div>
+          <div className='flex flex-col items-center'>
+            <p id='data' className='text-3xl'>
+              06 / 06
+            </p>
+            <p id='name' className='text-[2.5rem]'>
+              Lee Jae Woong
+            </p>
+          </div>
+          <div id='wez-logo' className='relative h-[100px]'>
+            <img
+              src={wez_logo}
+              className='absolute left-[50%] top-[50%] mx-auto w-[20vh] translate-y-[-50%] translate-x-[-50%]'
+            />
+          </div>
         </div>
-        <div id='dots' className='mb-8 flex justify-center gap-0.5'>
-          {dotArr.map((num, index) => (
-            <Dot key={num} dotNum={index} />
-          ))}
-        </div>
-        <div className='flex flex-col items-center'>
-          <p id='data' className='text-3xl'>
-            06 / 06
-          </p>
-          <p id='name' className='text-[2.5rem]'>
-            Lee Jae Woong
-          </p>
-        </div>
-        <div id='wez-logo' className='relative h-[100px]'>
-          <img
-            src={wez_logo}
-            className='absolute left-[50%] top-[50%] mx-auto w-[20vh] translate-y-[-50%] translate-x-[-50%]'
-          />
-        </div>
-        <Link to='cover'>
-          <div className='mx-4 mb-6 flex justify-center'>
-            <button className='h-[65px] w-full max-w-[540px] rounded-xl border-b-[1px] border-[#9a9a9a] bg-white text-3xl font-semibold drop-shadow-md'>
+        <div className='mx-3 mb-5'>
+          <Link to='cover'>
+            <button className='h-[65px] w-full rounded-xl border-b-[1px] border-[#9a9a9a] bg-white text-3xl font-semibold drop-shadow-md'>
               ENTER
             </button>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </main>
     </div>
   );
