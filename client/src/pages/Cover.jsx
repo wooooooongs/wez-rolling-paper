@@ -80,8 +80,10 @@ const Cover = () => {
           </div>
         </div>
         <div id='profileImg' className='mb-5'>
-          <div className='mx-auto se:max-w-[200px] mobileSm:max-w-[300px] mobileMd:max-w-[375px]'>
-            <img src={coding} className='aspect-square w-full rounded-full' />
+          <div
+            onClick={() => setShowModal(true)}
+            className='mx-auto se:max-w-[300px] mobileSm:max-w-[375px] mobileMd:max-w-[450px]'>
+            <img src={lpCover} className='aspect-auto w-full drop-shadow-lg' />
           </div>
         </div>
         <div
@@ -99,9 +101,6 @@ const Cover = () => {
               <FaStop size='28' />
             </span>
           </div>
-        </div>
-        <div id='cake' onClick={() => setShowModal(true)}>
-          <img src={coverExample} className='w-full' />
         </div>
       </div>
       {showModal ? <Modal /> : undefined}
