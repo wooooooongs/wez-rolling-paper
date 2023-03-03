@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import PaperList from '../pages/PaperList';
 import MemberList from '../pages/MemberList';
 import Cover from '../pages/Cover';
+import Edit from '../pages/Edit';
 
 const Router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const Router = createBrowserRouter([
   {
     path: '/cover',
     element: <Cover />,
+  },
+  {
+    path: '/edit',
+    element: <Edit />,
   },
 ]);
 
