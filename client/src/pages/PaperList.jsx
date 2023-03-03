@@ -95,7 +95,7 @@ const PaperList = () => {
   ];
 
   return (
-    <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden bg-yellow-50'>
+    <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden bg-paper bg-cover bg-no-repeat'>
       <div className={showModal ? 'blur-[1.875px]' : ''}>
         <div id='back-to-home' className='fixed'>
           <span className='inline-block h-12 w-12' onClick={() => navigate(-1)}>
