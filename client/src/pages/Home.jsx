@@ -85,7 +85,7 @@ const Home = () => {
       </div>
       <Link to='cover'>
         <div id='enter' className='mx-4 mb-6 flex justify-center'>
-          <button className='h-[60px] w-full max-w-[540px] rounded-md bg-blue-600 text-3xl font-semibold text-white'>
+          <button className='h-[65px] w-full max-w-[540px] rounded-xl border-b-[1px] border-[#9a9a9a] bg-white text-3xl font-semibold drop-shadow-md'>
             ENTER
           </button>
         </div>
