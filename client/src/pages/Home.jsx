@@ -55,14 +55,14 @@ const Home = () => {
         <div>
           <div
             id='profile-img'
-            className='mx-auto mt-8 mb-3 aspect-9/10 se:aspect-square se:max-w-[250px] mobileSm:max-w-[340px] mobileMd:aspect-square mobileMd:max-w-[460px] pc:max-w-[320px]'>
+            className='mx-auto mt-8 mb-3 aspect-9/10 w-full se:aspect-square se:max-w-[250px]'>
             <img
               src={coding}
               alt='Profile Image'
               className='h-full w-full rounded-2xl object-cover'
             />
           </div>
-          <div id='dots' className='mb-8 flex justify-center gap-0.5'>
+          <div id='dots' className='mb-12 flex justify-center gap-0.5 se:mb-6'>
             {dotArr.map((num, index) => (
               <Dot key={num} dotNum={index} />
             ))}
@@ -82,7 +82,7 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className='mx-3 mb-5'>
+        <div>
           <Link to='cover'>
             <button className='h-[65px] w-full rounded-xl border-b-[1px] border-[#9a9a9a] bg-white text-3xl font-semibold drop-shadow-md'>
               ENTER
