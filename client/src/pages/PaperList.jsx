@@ -95,7 +95,7 @@ const PaperList = () => {
   ];
 
   return (
-    <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden bg-paper bg-cover bg-no-repeat'>
+    <div className='relative mx-auto flex h-screen w-screen max-w-[480px] flex-col justify-between overflow-hidden bg-paper bg-cover bg-no-repeat'>
       <div className={showModal ? 'blur-[1.875px]' : ''}>
         <div id='back-to-home' className='fixed'>
           <span className='inline-block h-12 w-12' onClick={() => navigate(-1)}>
@@ -111,7 +111,7 @@ const PaperList = () => {
               return (
                 <div
                   key={index}
-                  className='aspect-square max-w-[152px] rounded-2xl bg-gray-300 px-3 pt-3 pb-2 mobileMd:max-w-[225px]'>
+                  className='aspect-square max-w-[152px] rounded-2xl bg-gray-300 px-3 pt-3 pb-2 mobileMd:max-w-[180px]'>
                   <div className='h-[80%]'>
                     <span className='text-sm line-clamp-5'>{data.context}</span>
                   </div>

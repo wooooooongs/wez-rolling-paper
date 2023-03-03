@@ -29,7 +29,7 @@ const Home = () => {
   };
 
   return (
-    <div className='mx-auto flex h-screen w-screen max-w-[820px] flex-col overflow-hidden bg-paper bg-cover bg-no-repeat'>
+    <div className='mx-auto flex h-screen w-screen max-w-[480px] flex-col overflow-hidden bg-paper bg-cover bg-no-repeat'>
       <header className='flex h-12 justify-between'>
         <div id='go-to-member-list'>
           <Link to='member-list'>

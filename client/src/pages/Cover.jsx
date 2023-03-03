@@ -65,7 +65,7 @@ const Cover = () => {
   };
 
   return (
-    <div className='relative mx-auto flex h-screen w-screen max-w-[820px] flex-col justify-between overflow-hidden bg-paper bg-cover bg-no-repeat'>
+    <div className='relative mx-auto flex h-screen w-screen max-w-[480px] flex-col justify-between overflow-hidden bg-paper bg-cover bg-no-repeat'>
       <div className={showModal ? 'blur-[2.5px]' : ''}>
         <div id='back-to-home' className='fixed'>
           <Link to='/'>
