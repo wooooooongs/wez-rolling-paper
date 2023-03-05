@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "wez-rolling-paper-server",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -12,5 +12,12 @@
   "scripts": {
     "start": "node src",
     "dev": "nodemon --watch '/Users/wooooooong/docu/wez-rolling-paper/server/index.js'"
+  },
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.6.0",
+    "nodemon": "^2.0.21",
+    "prettier": "^2.8.4"
   }
 }
