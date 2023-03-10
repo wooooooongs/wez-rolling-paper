@@ -17,18 +17,23 @@ const MemberSchema = new Schema(
     password: {
       type: String,
       require: false,
+      trim: true,
+      default: '0000',
     },
     profileImage: {
       type: String,
       require: false,
+      default: null,
     },
     coverImage: {
       type: String,
       require: false,
+      default: null,
     },
     music: {
       type: String,
       require: false,
+      default: null,
     },
   },
   {
