@@ -1,7 +1,18 @@
 import { Schema } from 'mongoose';
 
+const {
+  Types: { ObjectId },
+} = Schema;
+
 const MemberSchema = new Schema(
   {
+    papers: [
+      {
+        type: ObjectId,
+        require: true,
+        ref: 'paper',
+      },
+    ],
     available: {
       type: Boolean,
       require: true,
