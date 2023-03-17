@@ -11,7 +11,7 @@
   "type": "module",
   "scripts": {
     "start": "node src",
-    "dev": "nodemon --watch '/Users/wooooooong/docu/wez-rolling-paper/server/index.js'"
+    "dev": "nodemon --watch src/ ./index.js"
   },
   "devDependencies": {
     "eslint": "^8.35.0",
