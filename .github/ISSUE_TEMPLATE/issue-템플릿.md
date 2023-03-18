@@ -1,10 +1,9 @@
 ---
 name: Issue 템플릿
 about: Issue를 작성할 때 사용하는 템플릿입니다.
-title: "[Feat-]"
+title: 'Title'
 labels: ''
 assignees: wooooooongs
-
 ---
 
 ## 🤷‍♂️ 이슈 요약
@@ -15,4 +14,4 @@ assignees: wooooooongs
 
 ## ✅ 할 일
 - [ ] TODO
-- [ ] TODO
+  - 설명
