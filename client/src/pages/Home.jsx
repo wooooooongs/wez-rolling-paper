@@ -2,14 +2,14 @@ import tw from 'tailwind-styled-components';
 
 import coding from '../assets/profile-img/coding.png';
 import wez_logo from '../assets/profile-img/wez-logo.png';
-import { Main } from '../components/Main';
+import { Background } from '../components/Background';
 import { Dot, EnterButton, Header, MemberInfo } from '../components/homepage';
 
 const Home = () => {
   const dotArr = [1, 2, 3, 4, 5];
 
   return (
-    <Main>
+    <Background>
       <Header />
       <main className='relative mx-4 mb-6 flex h-screen flex-col justify-between'>
         <div>
@@ -37,7 +37,7 @@ const Home = () => {
         </div>
         <EnterButton />
       </main>
-    </Main>
+    </Background>
   );
 };
 
