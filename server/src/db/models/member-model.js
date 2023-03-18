@@ -5,7 +5,15 @@ const Member = model('member', MemberSchema);
 
 export class MemberModel {
   async findAll() {
-    return await Member.find();
+    return await Member.find().populate('papers');
+  }
+
+  async findAllExcludePapers() {
+    return await Member.find().select('-papers');
+  }
+
+  async findById(memberOid) {
+    return await Member.findOne(memberOid);
   }
 
   async create(memberInfo) {

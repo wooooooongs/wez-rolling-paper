@@ -9,6 +9,14 @@ class MemberService {
     return await this.memberModel.findAll();
   }
 
+  async getMembersExcludePapers() {
+    return await this.memberModel.findAllExcludePapers();
+  }
+
+  async getMemberByOid(memberOid) {
+    return await this.memberModel.findByOid({ _id: memberOid });
+  }
+
   async addMember(memberInfo) {
     return await this.memberModel.create(memberInfo);
   }

@@ -14,6 +14,27 @@ memberRouter.get('/', async (req, res, next) => {
   }
 });
 
+memberRouter.get('/only-member', async (req, res, next) => {
+  try {
+    const member = await memberService.getMembersExcludePapers();
+
+    res.status(200).json(member);
+  } catch (err) {
+    next(err);
+  }
+});
+
+memberRouter.get('/:memberOid', async (req, res, next) => {
+  try {
+    const { memberOid } = req.params;
+    const member = await memberService.getMemberByOid(memberOid);
+
+    res.status(200).json(member);
+  } catch (err) {
+    next(err);
+  }
+});
+
 memberRouter.post('/', async (req, res, next) => {
   try {
     const { available, name, birthDay } = req.body;
