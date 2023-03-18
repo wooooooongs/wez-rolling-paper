@@ -1,4 +1,4 @@
-import { paperModel } from '../db/index.js';
+import { paperModel, memberModel } from '../db/index.js';
 
 class PaperService {
   constructor(paperModel) {
@@ -9,8 +9,11 @@ class PaperService {
     return await this.paperModel.findById({ _id: paperOid });
   }
 
-  async addPaper(paperInfo) {
-    return await this.paperModel.create(paperInfo);
+  async addPaper(paperInfo, memberOid) {
+    const createdPaper = await this.paperModel.create(paperInfo);
+    const { _id } = createdPaper;
+
+    return await memberModel.update({ _id: memberOid }, _id);
   }
 }
 

@@ -16,15 +16,19 @@ paperRouter.get('/:paperOid', async (req, res, next) => {
   }
 });
 
-paperRouter.post('/', async (req, res, next) => {
+paperRouter.post('/:memberOid', async (req, res, next) => {
   try {
+    const { memberOid } = req.params;
     const { contents, nickname, color } = req.body;
 
-    const newPaper = await paperService.addPaper({
-      contents,
-      nickname,
-      color,
-    });
+    const newPaper = await paperService.addPaper(
+      {
+        contents,
+        nickname,
+        color,
+      },
+      memberOid,
+    );
 
     res.status(200).json(newPaper);
   } catch (err) {

@@ -11,3 +11,4 @@ db.on('error', (err) =>
 );
 
 export * from './models/member-model.js';
+export * from './models/paper-model.js';
