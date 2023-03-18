@@ -19,6 +19,14 @@ export class MemberModel {
   async create(memberInfo) {
     return await Member.create(memberInfo);
   }
+
+  async update(memberOid, paperOid) {
+    return await Member.updateOne(
+      memberOid,
+      { $push: { papers: paperOid } },
+      { new: true },
+    );
+  }
 }
 
 const memberModel = new MemberModel();
