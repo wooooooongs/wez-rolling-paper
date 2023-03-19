@@ -1,5 +1,3 @@
-import tw from 'tailwind-styled-components';
-
 import { Background } from '../components/Background';
 import { Header, Main } from '../components/homepage';
 

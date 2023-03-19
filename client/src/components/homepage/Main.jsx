@@ -1,9 +1,23 @@
+import { useState, useEffect } from 'react';
+import tw from 'tailwind-styled-components';
+
 import coding from '../../assets/profile-img/coding.png';
 import wez_logo from '../../assets/profile-img/wez-logo.png';
+import { get } from '../../utils/api';
 import { Dot, EnterButton, MemberInfo } from './';
+import { ApiUrl } from '../../constants/ApiUrl';
 
 const Main = () => {
-  const dotArr = [1, 2, 3, 4, 5];
+  const [membersData, setMembersData] = useState([]);
+
+  const getMembers = async () => {
+    const data = await get(ApiUrl.MEMBER, 'only-member');
+    setMembersData(data);
+  };
+
+  useEffect(() => {
+    getMembers();
+  }, []);
 
   return (
     <main className='relative mx-4 mb-6 flex h-screen flex-col justify-between'>
