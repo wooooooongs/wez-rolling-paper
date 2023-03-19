@@ -36,7 +36,9 @@ const Main = () => {
             <Dot key={num} dotNum={index} />
           ))}
         </div>
-        <MemberInfo />
+        {membersData && membersData.length > 0 && (
+          <MemberInfo membersData={membersData} />
+        )}
         <div id='wez-logo' className='relative h-[100px]'>
           <img
             src={wez_logo}
