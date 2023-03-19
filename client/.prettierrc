@@ -12,5 +12,13 @@
   "proseWrap": "never",
   "endOfLine": "auto",
   "plugins": ["prettier-plugin-tailwindcss"],
-  "pluginSearchDirs": false
+  "pluginSearchDirs": false,
+  "overrides": [
+    {
+      "files": "*.json",
+      "options": {
+        "printWidth": 200
+      }
+    }
+  ]
 }
