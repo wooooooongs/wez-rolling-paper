@@ -1,8 +1,17 @@
-const Dot = (props) => {
-  const { dotNum } = props;
+import { useEffect } from 'react';
+import { useSetRecoilState, useRecoilState } from 'recoil';
+
+import { currentMemberNumAtom } from '../../recoil';
+
+const Dot = ({ dotNum }) => {
+  const setCurrentMemberNum = useSetRecoilState(currentMemberNumAtom);
 
   return (
-    <span className={`${dotNum !== 0 ? 'opacity-30' : ''}`}>
+    <span
+      onClick={() => {
+        setCurrentMemberNum(dotNum);
+      }}
+      className={`${dotNum !== 0 ? 'opacity-30' : ''}`}>
       <svg
         width='10'
         height='10'

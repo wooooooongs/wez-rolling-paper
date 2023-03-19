@@ -32,9 +32,11 @@ const Main = () => {
           />
         </div>
         <div id='dots' className='mb-12 flex justify-center gap-0.5 se:mb-6'>
-          {dotArr.map((num, index) => (
-            <Dot key={num} dotNum={index} />
-          ))}
+          {membersData &&
+            membersData.length > 0 &&
+            membersData.map((dot, index) => (
+              <Dot key={'member' + index} dotNum={index} />
+            ))}
         </div>
         {membersData && membersData.length > 0 && (
           <MemberInfo membersData={membersData} />
