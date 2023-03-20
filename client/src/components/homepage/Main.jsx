@@ -20,18 +20,18 @@ const Main = () => {
   }, []);
 
   return (
-    <main className='relative mx-4 mb-6 flex h-screen flex-col justify-between'>
+    <main className='relative mx-4 mb-6 flex h-full flex-col justify-between'>
       <div>
         <div
           id='profile-img'
-          className='mx-auto mt-8 mb-3 aspect-9/10 w-full se:aspect-square se:max-w-[250px]'>
+          className='mx-auto mt-8 mb-3 aspect-square w-full se:max-w-[250px] mobileSm:aspect-9/10 mobileSm:max-w-[325px] mobileMd:max-w-[350px]'>
           <img
             src={coding}
             alt='Profile Image'
             className='h-full w-full rounded-2xl object-cover'
           />
         </div>
-        <div id='dots' className='mb-12 flex justify-center gap-0.5 se:mb-6'>
+        <div id='dots' className='mb-12 flex justify-center gap-2 se:mb-6'>
           {membersData &&
             membersData.length > 0 &&
             membersData.map((dot, index) => (
