@@ -48,7 +48,9 @@ const Main = () => {
           />
         </div>
       </div>
-      <EnterButton />
+      {membersData && membersData.length > 0 && (
+        <EnterButton membersData={membersData} />
+      )}
     </main>
   );
 };

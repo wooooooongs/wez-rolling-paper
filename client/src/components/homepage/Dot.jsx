@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import { useSetRecoilState, useRecoilState } from 'recoil';
+import { useRecoilState } from 'recoil';
 
 import { currentMemberNumAtom } from '../../recoil';
 
 const Dot = ({ dotNum }) => {
-  const setCurrentMemberNum = useSetRecoilState(currentMemberNumAtom);
+  const [currentMemberNum, setCurrentMemberNum] =
+    useRecoilState(currentMemberNumAtom);
 
   return (
     <span

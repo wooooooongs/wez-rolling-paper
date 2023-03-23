@@ -1,6 +1,16 @@
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { currentMemberDataAtom, currentMemberNumAtom } from '../../recoil';
 
-const EnterButton = () => {
+const EnterButton = ({ membersData }) => {
+  const currentMemberNum = useRecoilValue(currentMemberNumAtom);
+  const setCurrentMemberData = useSetRecoilState(currentMemberDataAtom);
+
+  useEffect(() => {
+    setCurrentMemberData(membersData[currentMemberNum]);
+  }, []);
+
   return (
     <div>
       <Link to='cover'>
