@@ -69,34 +69,21 @@ const PasswordModal = ({ currentMemberData }) => {
             <p className='mb-5 text-3xl'>작성자 비밀번호 입력</p>
           </Link>
           <div className='flex gap-5'>
-            <PasswordInput
-              type='tel'
-              inputMode='numeric'
-              maxLength='1'
-              min='0'
-              max='9'
-            />
-            <PasswordInput
-              type='tel'
-              inputMode='numeric'
-              maxLength='1'
-              min='0'
-              max='9'
-            />
-            <PasswordInput
-              type='tel'
-              inputMode='numeric'
-              maxLength='1'
-              min='0'
-              max='9'
-            />
-            <PasswordInput
-              type='tel'
-              inputMode='numeric'
-              maxLength='1'
-              min='0'
-              max='9'
-            />
+            {password.map((value, index) => {
+              return (
+                <PasswordInput
+                  key={index}
+                  value={value}
+                  type='text'
+                  inputMode='numeric'
+                  maxLength='1'
+                  min='0'
+                  max='9'
+                  ref={(el) => (inputRefs.current[index] = el)}
+                  onChange={(e) => handlePasswordChange(e, index)}
+                />
+              );
+            })}
           </div>
         </div>
       </div>
