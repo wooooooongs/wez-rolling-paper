@@ -1,12 +1,59 @@
+import { useEffect, useRef, useState } from 'react';
 import tw from 'tailwind-styled-components';
-import { Link } from 'react-router-dom';
-import { useSetRecoilState } from 'recoil';
+import { Link, useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 
 import { RxCross1 } from 'react-icons/rx';
 import { showPasswordModalAtom } from '../../recoil';
 
-const PasswordModal = () => {
-  const setShowPasswordModal = useSetRecoilState(showPasswordModalAtom);
+const PasswordModal = ({ currentMemberData }) => {
+  const [showPasswordModal, setShowPasswordModal] = useRecoilState(
+    showPasswordModalAtom,
+  );
+  const EMPTY_PASSWORD = ['', '', '', ''];
+  const [password, setPassword] = useState(EMPTY_PASSWORD);
+  const inputRefs = useRef([]);
+  const navigate = useNavigate();
+
+  const validPassword = currentMemberData.password;
+
+  const focusPasswordInput = () => {
+    if (showPasswordModal === true) {
+      inputRefs.current[0].focus();
+    }
+  };
+
+  useEffect(() => {
+    focusPasswordInput();
+  }, [showPasswordModal]);
+
+  const handlePasswordChange = (e, index) => {
+    const { value } = e.target;
+    const newPassword = [...password];
+
+    newPassword[index] = value;
+    setPassword(newPassword);
+
+    if (value !== '' && index + 1 < password.length) {
+      inputRefs.current[index + 1].focus();
+    }
+
+    const isComplete = !newPassword.includes('');
+    if (isComplete) {
+      validatePassword(newPassword);
+    }
+  };
+
+  const validatePassword = (enteredPassword) => {
+    if (enteredPassword.join('') === validPassword) {
+      setShowPasswordModal(false);
+      navigate('/paper-list');
+    } else {
+      console.log('비밀번호가 틀렸습니다.');
+      inputRefs.current[0].focus();
+      setPassword(EMPTY_PASSWORD);
+    }
+  };
 
   return (
     <>
