@@ -40,12 +40,13 @@ const PasswordModal = ({ currentMemberData }) => {
 
     const isComplete = !newPassword.includes('');
     if (isComplete) {
-      validatePassword(newPassword);
+      matchPassword(newPassword);
     }
   };
 
-  const validatePassword = (enteredPassword) => {
-    if (enteredPassword.join('') === validPassword) {
+  const matchPassword = (enteredPassword) => {
+    const isPasswordValid = enteredPassword.join('') === validPassword;
+    if (isPasswordValid) {
       setShowPasswordModal(false);
       navigate('/paper-list');
     } else {
