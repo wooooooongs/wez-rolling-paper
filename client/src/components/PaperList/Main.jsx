@@ -5,6 +5,7 @@ import { useRecoilState } from 'recoil';
 import { RiArrowGoBackLine } from 'react-icons/ri';
 import { HiOutlinePencilSquare } from 'react-icons/hi2';
 import { showLetterModalAtom } from '../../recoil/paper-list';
+import { LetterModal } from './LetterModal';
 
 const Main = () => {
   const [showLetterModal, setShowLetterModal] =
@@ -90,38 +91,41 @@ const Main = () => {
   ];
 
   return (
-    <main className={showLetterModal ? 'blur-[1.875px]' : ''}>
-      <BackButton>
-        <span className='inline-block h-12 w-12' onClick={() => navigate(-1)}>
-          <RiArrowGoBackLine size='28' className='ml-4 mt-3' />
-        </span>
-      </BackButton>
-      <Receiver>To. 미니미니</Receiver>
-      <List>
-        <div className='mx-5 grid max-h-[85vh] grid-cols-2 place-items-center gap-x-2 gap-y-5 overflow-scroll scrollbar-hide'>
-          {TEMP_DATA_ARRAY.map((data, index) => {
-            return (
-              <div
-                key={index}
-                className='aspect-square max-w-[152px] rounded-2xl bg-gray-300 px-3 pt-3 pb-2 mobileMd:max-w-[180px]'>
-                <div className='h-[80%]'>
-                  <span className='text-sm line-clamp-5'>{data.context}</span>
+    <>
+      <main className={showLetterModal ? 'blur-[1.875px]' : ''}>
+        <BackButton>
+          <span className='inline-block h-12 w-12' onClick={() => navigate(-1)}>
+            <RiArrowGoBackLine size='28' className='ml-4 mt-3' />
+          </span>
+        </BackButton>
+        <Receiver>To. 미니미니</Receiver>
+        <List>
+          <div className='mx-5 grid max-h-[85vh] grid-cols-2 place-items-center gap-x-2 gap-y-5 overflow-scroll scrollbar-hide'>
+            {TEMP_DATA_ARRAY.map((data, index) => {
+              return (
+                <div
+                  key={index}
+                  className='aspect-square max-w-[152px] rounded-2xl bg-gray-300 px-3 pt-3 pb-2 mobileMd:max-w-[180px]'>
+                  <div className='h-[80%]'>
+                    <span className='text-sm line-clamp-5'>{data.context}</span>
+                  </div>
+                  <div className='text-end'>-{data.nickName}</div>
                 </div>
-                <div className='text-end'>-{data.nickName}</div>
-              </div>
-            );
-          })}
-        </div>
-      </List>
-      <WriteNewButton onClick={() => setShowLetterModal(true)}>
-        {showLetterModal ? undefined : (
-          <HiOutlinePencilSquare
-            size='48'
-            className='absolute right-9 bottom-10'
-          />
-        )}
-      </WriteNewButton>
-    </main>
+              );
+            })}
+          </div>
+        </List>
+        <WriteNewButton onClick={() => setShowLetterModal(true)}>
+          {showLetterModal || (
+            <HiOutlinePencilSquare
+              size='48'
+              className='absolute right-9 bottom-10'
+            />
+          )}
+        </WriteNewButton>
+      </main>
+      {showLetterModal && <LetterModal />}
+    </>
   );
 };
 

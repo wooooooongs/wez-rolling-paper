@@ -12,7 +12,7 @@ const LetterModal = () => {
     '오랜만에 편지를 써봅니다. 잘 지내시나요? 최근에 저는 새로운 취미를 찾아서 책을 많이 읽고 있어요. 하루가 더욱 여유롭고 행복해지는 기분이 들어서 좋아요. 어떤 것을 좋아하시나요? 함께 취미 생활을 하면 더욱 신나고 즐거울 것 같아요. 늘 건강하고 행복하시길 바랄게요.';
 
   return (
-    <>
+    <div className='fixed inset-0 z-50'>
       <Background onClick={() => setShowLetterModal(false)}></Background>
       <Letter>
         <ProfileImg className='pt-6 pb-6'>
@@ -25,7 +25,7 @@ const LetterModal = () => {
           <p className='pr-1 text-right font-semibold'>멋쟁이가</p>
         </Content>
       </Letter>
-    </>
+    </div>
   );
 };
 
