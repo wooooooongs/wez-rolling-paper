@@ -1,5 +1,5 @@
 import tw from 'tailwind-styled-components';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
 import { RiArrowGoBackLine } from 'react-icons/ri';
@@ -115,14 +115,16 @@ const Main = () => {
             })}
           </div>
         </List>
-        <WriteNewButton onClick={() => setShowLetterModal(true)}>
-          {showLetterModal || (
-            <HiOutlinePencilSquare
-              size='48'
-              className='absolute right-9 bottom-10'
-            />
-          )}
-        </WriteNewButton>
+        <Link to='/edit'>
+          <WriteNewButton>
+            {showLetterModal || (
+              <HiOutlinePencilSquare
+                size='48'
+                className='absolute right-9 bottom-10'
+              />
+            )}
+          </WriteNewButton>
+        </Link>
       </main>
       {showLetterModal && <LetterModal />}
     </>
