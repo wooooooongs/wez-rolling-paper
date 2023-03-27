@@ -2,7 +2,7 @@
 - [ ] Feature
 - [ ] Bug Fix
 - [ ] Code style update
-- [ ] Refactorting
+- [ ] Refactoring
 - [ ] Documentation
 - [ ] Other
 
