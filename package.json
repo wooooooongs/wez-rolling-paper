@@ -1,0 +1,18 @@
+{
+  "name": "wez-rolling-paper",
+  "version": "1.0.0",
+  "description": "위즈 팀 내부적으로 사용할 롤링페이퍼 사이트입니다.",
+  "main": "index.js",
+  "repository": "https://github.com/wooooooongs/wez-rolling-paper.git",
+  "author": "wooooooongs <pires11233@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "be": "cd server && yarn dev",
+    "fe": "cd client && yarn dev",
+    "dev": "concurrently --kill-others-on-fail -p \"\u001b[44m[client]\u001b[0m\" \"yarn run fe\" & concurrently --kill-others-on-fail --prefix \"\u001b[43m[server]\u001b[0m\" \"yarn run be\""
+  }
+}
