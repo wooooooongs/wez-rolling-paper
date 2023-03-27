@@ -27,7 +27,7 @@ const MemberSchema = new Schema(
       requred: true,
     },
     birthDay: {
-      type: Date,
+      type: String,
       require: true,
     },
     password: {
