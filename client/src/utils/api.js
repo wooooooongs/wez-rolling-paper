@@ -1,6 +1,6 @@
 const get = async (endpoint, params = '') => {
   const apiUrl = import.meta.env.VITE_SERVER_URL + endpoint;
-  const url = `${apiUrl}${params && '/'}${params}`;
+  const url = params ? `${apiUrl}/${params}` : apiUrl;
 
   try {
     const res = await fetch(url, {
