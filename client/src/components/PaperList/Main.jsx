@@ -2,10 +2,10 @@ import tw from 'tailwind-styled-components';
 import { Link, useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 
-import { RiArrowGoBackLine } from 'react-icons/ri';
 import { HiOutlinePencilSquare } from 'react-icons/hi2';
 import { showLetterModalAtom } from '../../recoil/paper-list';
 import { LetterModal } from './LetterModal';
+import { Header } from './Header';
 
 const Main = () => {
   const [showLetterModal, setShowLetterModal] =
@@ -93,12 +93,7 @@ const Main = () => {
   return (
     <>
       <main className={showLetterModal ? 'blur-[1.875px]' : ''}>
-        <BackButton>
-          <span className='inline-block h-12 w-12' onClick={() => navigate(-1)}>
-            <RiArrowGoBackLine size='28' className='ml-4 mt-3' />
-          </span>
-        </BackButton>
-        <Receiver>To. 미니미니</Receiver>
+        <Header />
         <List>
           <div className='mx-5 grid max-h-[85vh] grid-cols-2 place-items-center gap-x-2 gap-y-5 overflow-scroll scrollbar-hide'>
             {TEMP_DATA_ARRAY.map((data, index) => {
