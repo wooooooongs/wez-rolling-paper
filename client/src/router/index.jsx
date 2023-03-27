@@ -13,19 +13,19 @@ const Router = createBrowserRouter([
     element: <Home />,
   },
   {
+    path: '/paper-list',
+    element: <PaperList />,
+  },
+  {
     path: '/member-list',
     element: <MemberList />,
   },
   {
-    path: '/:memberId',
+    path: '/cover',
     element: <Cover />,
   },
   {
-    path: '/:memberId/paper-list',
-    element: <PaperList />,
-  },
-  {
-    path: '/:memberId/edit',
+    path: '/edit',
     element: <Edit />,
   },
 ]);
