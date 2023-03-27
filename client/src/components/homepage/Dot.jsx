@@ -5,13 +5,14 @@ import { currentMemberNumAtom } from '../../recoil';
 const Dot = ({ dotNum }) => {
   const [currentMemberNum, setCurrentMemberNum] =
     useRecoilState(currentMemberNumAtom);
-
   return (
     <span
       onClick={() => {
         setCurrentMemberNum(dotNum);
       }}
-      className={`${dotNum !== 0 ? 'opacity-30' : ''}`}>
+      className={`${
+        dotNum !== currentMemberNum ? 'opacity-30' : ''
+      } cursor-pointer`}>
       <svg
         width='10'
         height='10'
