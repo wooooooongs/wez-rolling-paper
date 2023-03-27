@@ -12,8 +12,8 @@ export class MemberModel {
     return await Member.find().select('-papers');
   }
 
-  async findById(memberOid) {
-    return await Member.findOne(memberOid);
+  async findByOid(memberOid) {
+    return await Member.findOne(memberOid).populate('papers');
   }
 
   async create(memberInfo) {

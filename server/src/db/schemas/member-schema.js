@@ -1,4 +1,5 @@
 import { Schema } from 'mongoose';
+import { nanoid } from 'nanoid';
 
 const {
   Types: { ObjectId },
@@ -13,6 +14,10 @@ const MemberSchema = new Schema(
         ref: 'paper',
       },
     ],
+    memberId: {
+      type: String,
+      default: () => nanoid(5),
+    },
     available: {
       type: Boolean,
       require: true,
@@ -22,7 +27,7 @@ const MemberSchema = new Schema(
       requred: true,
     },
     birthDay: {
-      type: Date,
+      type: String,
       require: true,
     },
     password: {
