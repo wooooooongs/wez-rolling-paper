@@ -5,11 +5,14 @@ import { currentMemberNumAtom } from '../../recoil';
 const Dot = ({ dotNum }) => {
   const [currentMemberNum, setCurrentMemberNum] =
     useRecoilState(currentMemberNumAtom);
+
+  const changeMember = () => {
+    setCurrentMemberNum(dotNum);
+  };
+
   return (
     <span
-      onClick={() => {
-        setCurrentMemberNum(dotNum);
-      }}
+      onClick={changeMember}
       className={`${
         dotNum !== currentMemberNum ? 'opacity-30' : ''
       } cursor-pointer`}>
