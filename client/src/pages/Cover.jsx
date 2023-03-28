@@ -1,3 +1,4 @@
+import { useLocation } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
 import { Background } from '../components/Background';
@@ -7,13 +8,14 @@ import { currentMemberDataAtom, showPasswordModalAtom } from '../recoil';
 
 const Cover = () => {
   const showPasswordModal = useRecoilValue(showPasswordModalAtom);
-  const currentMemberData = useRecoilValue(currentMemberDataAtom);
+  const location = useLocation();
+  const currentMemberData = location.state.currentMemberData;
 
   return (
     <Background>
-      <Main />
+      <Main memberData={currentMemberData} />
       {showPasswordModal ? (
-        <PasswordModal currentMemberData={currentMemberData} />
+        <PasswordModal memberData={currentMemberData} />
       ) : undefined}
     </Background>
   );
