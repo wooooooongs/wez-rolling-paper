@@ -1,16 +1,17 @@
 import tw from 'tailwind-styled-components';
 
-import { useSetRecoilState } from 'recoil';
-import { showLetterModalAtom } from '../../recoil/paper-list';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import {
+  selectedLetterAtom,
+  showLetterModalAtom,
+} from '../../recoil/paper-list';
 
 import coding from '../../assets/profile-img/coding.png';
 import { ModalBackground } from '../Background';
 
 const LetterModal = () => {
   const setShowLetterModal = useSetRecoilState(showLetterModalAtom);
-
-  const TEMP_PAPER_LETTER =
-    '오랜만에 편지를 써봅니다. 잘 지내시나요? 최근에 저는 새로운 취미를 찾아서 책을 많이 읽고 있어요. 하루가 더욱 여유롭고 행복해지는 기분이 들어서 좋아요. 어떤 것을 좋아하시나요? 함께 취미 생활을 하면 더욱 신나고 즐거울 것 같아요. 늘 건강하고 행복하시길 바랄게요.';
+  const selecedLetter = useRecoilValue(selectedLetterAtom);
 
   return (
     <>
@@ -21,9 +22,11 @@ const LetterModal = () => {
         </ProfileImg>
         <Content className=''>
           <p className='mb-2 overflow-scroll scrollbar-hide se:max-h-[8rem] mobileSm:max-h-[17rem] mobileMd:max-h-[14.3rem]'>
-            {TEMP_PAPER_LETTER}
+            {selecedLetter && selecedLetter['contents']}
           </p>
-          <p className='pr-1 text-right font-semibold'>멋쟁이가</p>
+          <p className='pr-1 text-right font-semibold'>
+            {selecedLetter && selecedLetter['nickname']}
+          </p>
         </Content>
       </Letter>
     </>
