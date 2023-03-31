@@ -7,7 +7,7 @@ import { RiHome5Line } from 'react-icons/ri';
 import { showPasswordModalAtom } from '../../recoil';
 import { MusicPlayer } from './MusicPlayer';
 
-const Main = () => {
+const Main = ({ memberData }) => {
   const [showPasswordModal, setShowPasswordModal] = useRecoilState(
     showPasswordModalAtom,
   );

@@ -4,7 +4,7 @@ import { useRecoilValue } from 'recoil';
 import { Background } from '../components/Background';
 import { Main } from '../components/cover';
 import { PasswordModal } from '../components/cover';
-import { currentMemberDataAtom, showPasswordModalAtom } from '../recoil';
+import { showPasswordModalAtom } from '../recoil';
 
 const Cover = () => {
   const showPasswordModal = useRecoilValue(showPasswordModalAtom);

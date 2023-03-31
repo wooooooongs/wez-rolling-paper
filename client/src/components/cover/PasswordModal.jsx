@@ -7,7 +7,7 @@ import { RxCross1 } from 'react-icons/rx';
 import { showPasswordModalAtom } from '../../recoil';
 import { ModalBackground } from '../Background';
 
-const PasswordModal = ({ currentMemberData }) => {
+const PasswordModal = ({ memberData }) => {
   const [showPasswordModal, setShowPasswordModal] = useRecoilState(
     showPasswordModalAtom,
   );
@@ -24,9 +24,13 @@ const PasswordModal = ({ currentMemberData }) => {
     }
   };
 
-  useEffect(() => {
-    focusPasswordInput();
-  }, [showPasswordModal]);
+  const moveToPaperList = () => {
+    navigate(`paper-list`, {
+      state: {
+        memberData: memberData,
+      },
+    });
+  };
 
   const handlePasswordChange = (e, index) => {
     const { value } = e.target;
@@ -47,9 +51,10 @@ const PasswordModal = ({ currentMemberData }) => {
 
   const matchPassword = (enteredPassword) => {
     const isPasswordValid = enteredPassword.join('') === validPassword;
+
     if (isPasswordValid) {
       setShowPasswordModal(false);
-      navigate('/paper-list');
+      moveToPaperList();
     } else {
       console.log('비밀번호가 틀렸습니다.');
       inputRefs.current[0].focus();
@@ -67,9 +72,9 @@ const PasswordModal = ({ currentMemberData }) => {
           <RxCross1 size='26' />
         </span>
         <div className='flex flex-col items-center'>
-          <Link to='/paper-list'>
-            <p className='mb-5 text-3xl'>작성자 비밀번호 입력</p>
-          </Link>
+          <p onClick={moveToPaperList} className='mb-5 text-3xl'>
+            작성자 비밀번호 입력
+          </p>
           <div className='flex gap-5'>
             {password.map((value, index) => {
               return (
