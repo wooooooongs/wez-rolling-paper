@@ -92,7 +92,7 @@ const Main = () => {
 
   return (
     <>
-      <main className={showLetterModal ? 'blur-[1.875px]' : ''}>
+      <div className={showLetterModal ? 'blur-[1.875px]' : ''}>
         <Header />
         <List>
           <div className='mx-5 grid max-h-[85vh] grid-cols-2 place-items-center gap-x-2 gap-y-5 overflow-scroll scrollbar-hide'>
@@ -120,8 +120,7 @@ const Main = () => {
             )}
           </WriteNewButton>
         </Link>
-      </main>
-      {showLetterModal && <LetterModal />}
+      </div>
     </>
   );
 };

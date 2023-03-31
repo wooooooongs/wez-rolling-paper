@@ -5,6 +5,7 @@ import { useRecoilState } from 'recoil';
 
 import { RxCross1 } from 'react-icons/rx';
 import { showPasswordModalAtom } from '../../recoil';
+import { ModalBackground } from '../Background';
 
 const PasswordModal = ({ currentMemberData }) => {
   const [showPasswordModal, setShowPasswordModal] = useRecoilState(
@@ -97,5 +98,3 @@ export { PasswordModal };
 const PasswordInput = tw.input`
 leading-10 text-3xl font-semibold h-12 w-12 border-b-2 focus:border-[#9a9a9a] border-[#9a9a9a50] text-center caret-transparent focus:outline-none
 `;
-
-const ModalBackground = tw.div`absolute right-0 h-screen w-full bg-[#00000070]`;
