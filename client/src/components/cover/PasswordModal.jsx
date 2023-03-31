@@ -16,10 +16,8 @@ const PasswordModal = ({ memberData }) => {
   const inputRefs = useRef([]);
   const navigate = useNavigate();
 
-  const validPassword = currentMemberData.password;
-
   const focusPasswordInput = () => {
-    if (showPasswordModal === true) {
+    if (showPasswordModal) {
       inputRefs.current[0].focus();
     }
   };
@@ -50,6 +48,7 @@ const PasswordModal = ({ memberData }) => {
   };
 
   const matchPassword = (enteredPassword) => {
+    const validPassword = memberData.password;
     const isPasswordValid = enteredPassword.join('') === validPassword;
 
     if (isPasswordValid) {
