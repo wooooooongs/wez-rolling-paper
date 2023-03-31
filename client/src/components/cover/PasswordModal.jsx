@@ -61,6 +61,12 @@ const PasswordModal = ({ memberData }) => {
     }
   };
 
+  useEffect(() => {
+    if (showPasswordModal) {
+      focusPasswordInput();
+    }
+  }, [showPasswordModal]);
+
   return (
     <>
       <ModalBackground onClick={() => setShowPasswordModal(false)} />
