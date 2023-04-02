@@ -25,7 +25,7 @@ const Router = createBrowserRouter([
     element: <PaperList />,
   },
   {
-    path: '/:memberId/edit',
+    path: '/:memberId/paper-list/edit',
     element: <Edit />,
   },
 ]);

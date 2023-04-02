@@ -53,7 +53,7 @@ const Main = ({ memberData }) => {
               })}
           </div>
         </List>
-        <Link to='/edit'>
+        <Link to='edit'>
           <WriteNewButton>
             {showLetterModal || (
               <HiOutlinePencilSquare
