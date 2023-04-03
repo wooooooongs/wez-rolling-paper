@@ -1,4 +1,14 @@
+import { useState } from 'react';
+
 const Editor = () => {
+  const [textLength, setTextLength] = useState(0);
+
+  const handleTextChange = (e) => {
+    const textCount = e.target.value.length;
+
+    setTextLength(textCount);
+  };
+
   return (
     <div className='flex h-[55vh] flex-col justify-between rounded-2xl bg-yellow-100 p-6 drop-shadow-lg'>
       <div className='h-[86%]'>
@@ -6,7 +16,8 @@ const Editor = () => {
           className='h-full w-full resize-none bg-transparent text-3xl leading-10 tracking-wider outline-none scrollbar-hide'
           spellCheck='false'
           cols='30'
-          rows='10'></textarea>
+          rows='10'
+          onChange={(e) => handleTextChange(e)}></textarea>
       </div>
       <div className='flex justify-between'>
         <div className='flex gap-2'>
@@ -16,7 +27,8 @@ const Editor = () => {
           <span className='inline-block h-8 w-8 bg-slate-600'></span>
         </div>
         <div className='pt-2'>
-          <span className=''>100 byte</span>
+          <span className='m-1'>{textLength}</span>
+          <span>자</span>
         </div>
       </div>
     </div>
