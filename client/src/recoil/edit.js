@@ -6,7 +6,15 @@ export const paperContentsAtom = atom({
     memberOid: '',
     contents: '',
     nickname: '',
-    password: '0000',
+    password: '',
     color: 'white',
+  },
+});
+
+export const userInfoTooltipAtom = atom({
+  key: 'userInfoTooltip',
+  default: {
+    password: true,
+    nickname: false,
   },
 });
