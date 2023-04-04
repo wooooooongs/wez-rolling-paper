@@ -19,4 +19,4 @@ const PaperList = () => {
   );
 };
 
-export default PaperList;
+export { PaperList };

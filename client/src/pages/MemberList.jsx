@@ -114,4 +114,4 @@ const MemberList = () => {
   );
 };
 
-export default MemberList;
+export { MemberList };

@@ -1,11 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import Home from '../pages/Home';
-import PaperList from '../pages/PaperList';
-import MemberList from '../pages/MemberList';
-import Cover from '../pages/Cover';
-import Edit from '../pages/Edit';
+import { Home, MemberList, Cover, PaperList, Edit, Error } from '../pages/';
 
 const Router = createBrowserRouter([
   {
