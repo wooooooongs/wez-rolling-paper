@@ -1,11 +1,17 @@
 import { useState } from 'react';
+import { useSetRecoilState } from 'recoil';
+
+import { paperContentsAtom } from '../../recoil';
 
 const Editor = () => {
   const [textLength, setTextLength] = useState(0);
+  const setPaperContents = useSetRecoilState(paperContentsAtom);
 
   const handleTextChange = (e) => {
-    const textCount = e.target.value.length;
+    const text = e.target.value;
+    const textCount = text.length;
 
+    setPaperContents((prev) => ({ ...prev, contents: text }));
     setTextLength(textCount);
   };
 
