@@ -1,27 +1,44 @@
 import { useEffect } from 'react';
-import { useRecoilState, useResetRecoilState } from 'recoil';
+import { useRecoilState, useResetRecoilState, useSetRecoilState } from 'recoil';
 import { useNavigate } from 'react-router-dom';
 import tw from 'tailwind-styled-components';
 
 import { BsCheckLg } from 'react-icons/bs';
 import { Editor, UserInfoInput, ImageUpload } from './index';
-import { paperContentsAtom } from '../../recoil';
+import { paperContentsAtom, userInfoTooltipAtom } from '../../recoil';
 import { post } from '../../utils/api';
 import { ApiUrl } from '../../constants/ApiUrl';
 
 const Main = ({ memberOid }) => {
   const navigate = useNavigate();
   const [paperContents, setPaperContents] = useRecoilState(paperContentsAtom);
+  const setShowTooltip = useSetRecoilState(userInfoTooltipAtom);
   const resetPaperContents = useResetRecoilState(paperContentsAtom);
+  const resetShowTooltip = useResetRecoilState(userInfoTooltipAtom);
+
+  const checkContents = (type) => {
+    const isEmpty = !paperContents[type] || paperContents[type].length === 0;
+
+    setShowTooltip((prev) => ({ ...prev, [type]: isEmpty }));
+    return !isEmpty;
+  };
 
   const postPaper = async () => {
-    await post(ApiUrl.PAPER, paperContents);
+    const isConfirmed = confirm('위 내용으로 편지를 작성하시겠습니까?');
+    const isValid = checkContents('password') && checkContents('nickname');
+
+    if (isConfirmed && isValid) {
+      await post(ApiUrl.PAPER, paperContents);
+    } else {
+      return;
+    }
 
     navigate(-1);
   };
 
   useEffect(() => {
     resetPaperContents();
+    resetShowTooltip();
 
     setPaperContents((prev) => ({ ...prev, memberOid: memberOid }));
   }, []);
