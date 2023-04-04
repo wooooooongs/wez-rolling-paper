@@ -7,22 +7,27 @@ const Router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
+    errorElement: <Error />,
   },
   {
     path: '/member-list',
     element: <MemberList />,
+    errorElement: <Error />,
   },
   {
     path: '/:memberId',
     element: <Cover />,
+    errorElement: <Error />,
   },
   {
     path: '/:memberId/paper-list',
     element: <PaperList />,
+    errorElement: <Error />,
   },
   {
     path: '/:memberId/paper-list/edit',
     element: <Edit />,
+    errorElement: <Error />,
   },
 ]);
 
