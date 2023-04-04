@@ -1,8 +1,7 @@
-import { useState } from 'react';
 import { useRecoilState, useSetRecoilState } from 'recoil';
-import tw from 'tailwind-styled-components';
 
 import { paperContentsAtom, userInfoTooltipAtom } from '../../recoil';
+import { TooltipText } from '../TooltipText';
 
 const UserInfoInput = () => {
   const setPaperContents = useSetRecoilState(paperContentsAtom);
@@ -60,5 +59,3 @@ const UserInfoInput = () => {
 };
 
 export { UserInfoInput };
-
-const TooltipText = tw.p`tooltip absolute left-[-0.25rem] bottom-[2.25rem] max-w-[15.625rem] rounded-xl border-2 border-white bg-white p-1 px-3 text-sm drop-shadow-xl`;
