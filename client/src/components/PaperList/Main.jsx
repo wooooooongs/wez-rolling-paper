@@ -11,7 +11,6 @@ import {
 } from '../../recoil/';
 import { get } from '../../utils/api';
 import { ApiUrl } from '../../constants/ApiUrl';
-import { Header } from './Header';
 
 const Main = ({ memberData }) => {
   const [lettersData, setLettersData] = useRecoilState(lettersAtom);
@@ -33,7 +32,6 @@ const Main = ({ memberData }) => {
   return (
     <>
       <div className={showLetterModal ? 'blur-[1.875px]' : ''}>
-        <Header />
         <List>
           <div className='mx-5 grid max-h-[85vh] grid-cols-2 place-items-center gap-x-2 gap-y-5 overflow-scroll scrollbar-hide'>
             {lettersData &&

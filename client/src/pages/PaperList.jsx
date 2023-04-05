@@ -2,9 +2,8 @@ import { useLocation } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
 
 import { Background } from '../components/Background';
-import { Main } from '../components/PaperList/';
+import { Main, LetterModal, Header } from '../components/PaperList/';
 import { showLetterModalAtom } from '../recoil';
-import { LetterModal } from '../components/PaperList/';
 
 const PaperList = () => {
   const location = useLocation();
@@ -13,6 +12,7 @@ const PaperList = () => {
 
   return (
     <Background>
+      <Header />
       <Main memberData={currentMemberData} />
       {showLetterModal && <LetterModal />}
     </Background>

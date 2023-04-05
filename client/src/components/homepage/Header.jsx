@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import tw from 'tailwind-styled-components';
 
 import {
   RiMenuLine,
@@ -8,14 +9,14 @@ import {
 
 const Header = () => {
   return (
-    <header className='flex h-12 justify-between'>
-      <div id='go-to-member-list'>
+    <header className='mt-3 mb-6 flex justify-between'>
+      <MemberListButton>
         <Link to='member-list'>
           <span className='inline-block h-12 w-12'>
-            <RiMenuLine size='24' className='ml-4 mt-3' />
+            <RiMenuLine size='28' className='ml-4 mt-[0.45rem]' />
           </span>
         </Link>
-      </div>
+      </MemberListButton>
       <div id='date-selector'>
         <span>
           <RiArrowLeftSFill size='52' className='inline-block pb-1' />
@@ -32,3 +33,5 @@ const Header = () => {
   );
 };
 export { Header };
+
+const MemberListButton = tw.div``;
