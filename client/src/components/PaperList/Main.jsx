@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import tw from 'tailwind-styled-components';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useRecoilState, useSetRecoilState } from 'recoil';
 
 import { HiOutlinePencilSquare } from 'react-icons/hi2';
@@ -13,14 +13,15 @@ import { get } from '../../utils/api';
 import { ApiUrl } from '../../constants/ApiUrl';
 
 const Main = ({ memberData }) => {
+  const navigate = useNavigate();
   const [lettersData, setLettersData] = useRecoilState(lettersAtom);
   const [showLetterModal, setShowLetterModal] =
     useRecoilState(showLetterModalAtom);
   const setSelectedLetter = useSetRecoilState(selectedLetterAtom);
 
-  const getLetters = async () => {
-    const memberOid = memberData['_id'];
+  const memberOid = memberData['_id'];
 
+  const getLetters = async () => {
     const data = await get(ApiUrl.MEMBER, memberOid);
     setLettersData(data['papers']);
   };
@@ -28,6 +29,14 @@ const Main = ({ memberData }) => {
   useEffect(() => {
     getLetters();
   }, []);
+
+  const moveToEditPage = () => {
+    navigate('edit', {
+      state: {
+        memberOid: memberOid,
+      },
+    });
+  };
 
   return (
     <>
@@ -51,16 +60,14 @@ const Main = ({ memberData }) => {
               })}
           </div>
         </List>
-        <Link to='edit'>
-          <WriteNewButton>
-            {showLetterModal || (
-              <HiOutlinePencilSquare
-                size='48'
-                className='absolute right-9 bottom-10'
-              />
-            )}
-          </WriteNewButton>
-        </Link>
+        <WriteNewButton onClick={moveToEditPage}>
+          {showLetterModal || (
+            <HiOutlinePencilSquare
+              size='48'
+              className='absolute right-9 bottom-10'
+            />
+          )}
+        </WriteNewButton>
       </div>
     </>
   );
@@ -68,5 +75,5 @@ const Main = ({ memberData }) => {
 
 export { Main };
 
-const List = tw.div`mx-auto h-screen py-10 mobileMd:max-w-[545px]`;
+const List = tw.div`mx-auto h-screenmobileMd:max-w-[545px]`;
 const WriteNewButton = tw.span``;
