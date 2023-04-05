@@ -1,6 +1,6 @@
 import { Schema } from 'mongoose';
 
-const PaperSchema = new Schema(
+const LetterSchema = new Schema(
   {
     contents: {
       type: String,
@@ -25,9 +25,9 @@ const PaperSchema = new Schema(
     },
   },
   {
-    collection: 'papers',
+    collection: 'letters',
     timestamps: true,
   },
 );
 
-export default PaperSchema;
+export default LetterSchema;

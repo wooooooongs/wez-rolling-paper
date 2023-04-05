@@ -1,22 +1,22 @@
-import { paperModel, memberModel } from '../db/index.js';
+import { letterModel, memberModel } from '../db/index.js';
 
-class PaperService {
-  constructor(paperModel) {
-    this.paperModel = paperModel;
+class LetterService {
+  constructor(letterModel) {
+    this.letterModel = letterModel;
   }
 
-  async getPaperById(paperOid) {
-    return await this.paperModel.findById({ _id: paperOid });
+  async getLetterById(letterOid) {
+    return await this.letterModel.findById({ _id: letterOid });
   }
 
-  async addPaper(paperInfo, memberOid) {
-    const createdPaper = await this.paperModel.create(paperInfo);
-    const { _id } = createdPaper;
+  async addLetter(letterInfo, memberOid) {
+    const createdLetter = await this.letterModel.create(letterInfo);
+    const { _id } = createdLetter;
 
     return await memberModel.update({ _id: memberOid }, _id);
   }
 }
 
-const paperService = new PaperService(paperModel);
+const letterService = new LetterService(letterModel);
 
-export { paperService };
+export { letterService };

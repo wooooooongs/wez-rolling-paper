@@ -16,7 +16,7 @@ memberRouter.get('/', async (req, res, next) => {
 
 memberRouter.get('/only-member', async (req, res, next) => {
   try {
-    const member = await memberService.getMembersExcludePapers();
+    const member = await memberService.getMembersExcludeLetters();
 
     res.status(200).json(member);
   } catch (err) {

@@ -5,25 +5,25 @@ const Member = model('member', MemberSchema);
 
 export class MemberModel {
   async findAll() {
-    return await Member.find().populate('papers');
+    return await Member.find().populate('letters');
   }
 
-  async findAllExcludePapers() {
-    return await Member.find().select('-papers');
+  async findAllExcludeLetters() {
+    return await Member.find().select('-letters');
   }
 
   async findByOid(memberOid) {
-    return await Member.findOne(memberOid).populate('papers');
+    return await Member.findOne(memberOid).populate('letters');
   }
 
   async create(memberInfo) {
     return await Member.create(memberInfo);
   }
 
-  async update(memberOid, paperOid) {
+  async update(memberOid, letterOid) {
     return await Member.updateOne(
       memberOid,
-      { $push: { papers: paperOid } },
+      { $push: { letters: letterOid } },
       { new: true },
     );
   }

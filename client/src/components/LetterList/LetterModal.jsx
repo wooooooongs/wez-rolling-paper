@@ -4,7 +4,7 @@ import { useRecoilValue, useSetRecoilState } from 'recoil';
 import {
   selectedLetterAtom,
   showLetterModalAtom,
-} from '../../recoil/paper-list';
+} from '../../recoil/letter-list';
 
 import coding from '../../assets/profile-img/coding.png';
 import { ModalBackground } from '../Background';

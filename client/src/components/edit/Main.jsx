@@ -5,30 +5,31 @@ import tw from 'tailwind-styled-components';
 
 import { BsCheckLg } from 'react-icons/bs';
 import { Editor, UserInfoInput, ImageUpload } from './index';
-import { paperContentsAtom, userInfoTooltipAtom } from '../../recoil';
+import { letterContentsAtom, userInfoTooltipAtom } from '../../recoil';
 import { post } from '../../utils/api';
 import { ApiUrl } from '../../constants/ApiUrl';
 
 const Main = ({ memberOid }) => {
   const navigate = useNavigate();
-  const [paperContents, setPaperContents] = useRecoilState(paperContentsAtom);
+  const [letterContents, setLetterContents] =
+    useRecoilState(letterContentsAtom);
   const setShowTooltip = useSetRecoilState(userInfoTooltipAtom);
-  const resetPaperContents = useResetRecoilState(paperContentsAtom);
+  const resetLetterContents = useResetRecoilState(letterContentsAtom);
   const resetShowTooltip = useResetRecoilState(userInfoTooltipAtom);
 
   const checkContents = (type) => {
-    const isEmpty = !paperContents[type] || paperContents[type].length === 0;
+    const isEmpty = !letterContents[type] || letterContents[type].length === 0;
 
     setShowTooltip((prev) => ({ ...prev, [type]: isEmpty }));
     return !isEmpty;
   };
 
-  const postPaper = async () => {
+  const postLetter = async () => {
     const isConfirmed = confirm('위 내용으로 편지를 작성하시겠습니까?');
     const isValid = checkContents('password') && checkContents('nickname');
 
     if (isConfirmed && isValid) {
-      await post(ApiUrl.PAPER, paperContents);
+      await post(ApiUrl.LETTER, letterContents);
     } else {
       return;
     }
@@ -37,10 +38,10 @@ const Main = ({ memberOid }) => {
   };
 
   useEffect(() => {
-    resetPaperContents();
+    resetLetterContents();
     resetShowTooltip();
 
-    setPaperContents((prev) => ({ ...prev, memberOid: memberOid }));
+    setLetterContents((prev) => ({ ...prev, memberOid: memberOid }));
   }, []);
 
   return (
@@ -50,7 +51,7 @@ const Main = ({ memberOid }) => {
         <UserInfoInput />
         <ImageUpload />
       </div>
-      <ConfirmBox onClick={postPaper}>
+      <ConfirmBox onClick={postLetter}>
         <BsCheckLg
           className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]'
           size='2rem'

@@ -7,11 +7,11 @@ const {
 
 const MemberSchema = new Schema(
   {
-    papers: [
+    letters: [
       {
         type: ObjectId,
         require: true,
-        ref: 'paper',
+        ref: 'letter',
       },
     ],
     memberId: {

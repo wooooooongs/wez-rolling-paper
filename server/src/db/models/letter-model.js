@@ -1,18 +1,18 @@
 import { model } from 'mongoose';
-import PaperSchema from '../schemas/paper-schema.js';
+import LetterSchema from '../schemas/letter-schema.js';
 
-const Paper = model('paper', PaperSchema);
+const Letter = model('letter', LetterSchema);
 
-export class PaperModel {
-  async findById(paperOid) {
-    return await Paper.findOne(paperOid);
+export class LetterModel {
+  async findById(letterOid) {
+    return await Letter.findOne(letterOid);
   }
 
-  async create(paperInfo) {
-    return await Paper.create(paperInfo);
+  async create(letterInfo) {
+    return await Letter.create(letterInfo);
   }
 }
 
-const paperModel = new PaperModel();
+const letterModel = new LetterModel();
 
-export { paperModel };
+export { letterModel };

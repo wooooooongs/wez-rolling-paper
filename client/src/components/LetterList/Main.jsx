@@ -23,7 +23,7 @@ const Main = ({ memberData }) => {
 
   const getLetters = async () => {
     const data = await get(ApiUrl.MEMBER, memberOid);
-    setLettersData(data['papers']);
+    setLettersData(data['letters']);
   };
 
   useEffect(() => {

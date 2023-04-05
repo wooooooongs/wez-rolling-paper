@@ -1,27 +1,27 @@
 import { Router } from 'express';
 
-import { paperService } from '../services/index.js';
+import { letterService } from '../services/index.js';
 
-const paperRouter = Router();
+const letterRouter = Router();
 
-paperRouter.get('/:paperOid', async (req, res, next) => {
+letterRouter.get('/:letterOid', async (req, res, next) => {
   try {
-    const { paperOid } = req.params;
+    const { letterOid } = req.params;
 
-    const currentPaper = await paperService.getPaperById(paperOid);
+    const currentLetter = await letterService.getLetterById(letterOid);
 
-    res.status(200).json(currentPaper);
+    res.status(200).json(currentLetter);
   } catch (err) {
     next(err);
   }
 });
 
-paperRouter.post('/:memberOid', async (req, res, next) => {
+letterRouter.post('/:memberOid', async (req, res, next) => {
   try {
     const { memberOid } = req.params;
     const { contents, nickname, color } = req.body;
 
-    const newPaper = await paperService.addPaper(
+    const newLetter = await letterService.addLetter(
       {
         contents,
         nickname,
@@ -30,10 +30,10 @@ paperRouter.post('/:memberOid', async (req, res, next) => {
       memberOid,
     );
 
-    res.status(200).json(newPaper);
+    res.status(200).json(newLetter);
   } catch (err) {
     next(err);
   }
 });
 
-export { paperRouter };
+export { letterRouter };

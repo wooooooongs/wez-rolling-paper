@@ -22,8 +22,8 @@ const PasswordModal = ({ memberData }) => {
     }
   };
 
-  const moveToPaperList = () => {
-    navigate(`paper-list`, {
+  const moveToLetterList = () => {
+    navigate(`letter-list`, {
       state: {
         memberData: memberData,
       },
@@ -53,7 +53,7 @@ const PasswordModal = ({ memberData }) => {
 
     if (isPasswordValid) {
       setShowPasswordModal(false);
-      moveToPaperList();
+      moveToLetterList();
     } else {
       console.log('비밀번호가 틀렸습니다.');
       inputRefs.current[0].focus();
@@ -77,7 +77,7 @@ const PasswordModal = ({ memberData }) => {
           <RxCross1 size='26' />
         </span>
         <div className='flex flex-col items-center'>
-          <p onClick={moveToPaperList} className='mb-5 text-3xl'>
+          <p onClick={moveToLetterList} className='mb-5 text-3xl'>
             작성자 비밀번호 입력
           </p>
           <div className='flex gap-5'>

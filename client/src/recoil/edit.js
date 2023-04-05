@@ -1,7 +1,7 @@
 import { atom } from 'recoil';
 
-export const paperContentsAtom = atom({
-  key: 'paperContents',
+export const letterContentsAtom = atom({
+  key: 'letterContents',
   default: {
     memberOid: '',
     contents: '',

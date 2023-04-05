@@ -65,7 +65,7 @@ const MemberList = () => {
   ];
 
   return (
-    <div className='mx-auto flex h-screen w-screen max-w-[480px] flex-col justify-between overflow-hidden bg-paper bg-cover bg-no-repeat'>
+    <div className='bg-letter mx-auto flex h-screen w-screen max-w-[480px] flex-col justify-between overflow-hidden bg-cover bg-no-repeat'>
       <div>
         <div id='nav' className='mb-12 flex h-12 justify-between'>
           <div id='back-to-home'>

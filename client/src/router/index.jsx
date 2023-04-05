@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 
-import { Home, MemberList, Cover, PaperList, Edit, Error } from '../pages/';
+import { Home, MemberList, Cover, LetterList, Edit, Error } from '../pages/';
 
 const Router = createBrowserRouter([
   {
@@ -20,12 +20,12 @@ const Router = createBrowserRouter([
     errorElement: <Error />,
   },
   {
-    path: '/:memberId/paper-list',
-    element: <PaperList />,
+    path: '/:memberId/letter-list',
+    element: <LetterList />,
     errorElement: <Error />,
   },
   {
-    path: '/:memberId/paper-list/edit',
+    path: '/:memberId/letter-list/edit',
     element: <Edit />,
     errorElement: <Error />,
   },

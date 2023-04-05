@@ -13,7 +13,7 @@ module.exports = {
         '9/10': '9 / 10',
       },
       backgroundImage: {
-        paper: "url('./src/assets/cover/background-1.png')",
+        letter: "url('./src/assets/cover/background-1.png')",
       },
     },
   },

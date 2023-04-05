@@ -1,16 +1,16 @@
 import { useRecoilState, useSetRecoilState } from 'recoil';
 
-import { paperContentsAtom, userInfoTooltipAtom } from '../../recoil';
+import { letterContentsAtom, userInfoTooltipAtom } from '../../recoil';
 import { TooltipText } from '../TooltipText';
 
 const UserInfoInput = () => {
-  const setPaperContents = useSetRecoilState(paperContentsAtom);
+  const setLetterContents = useSetRecoilState(letterContentsAtom);
   const [showTooltip, setShowTooltip] = useRecoilState(userInfoTooltipAtom);
 
   const handleChange = (type) => (e) => {
     const value = e.target.value.toString();
 
-    setPaperContents((prev) => ({ ...prev, [type]: value }));
+    setLetterContents((prev) => ({ ...prev, [type]: value }));
   };
 
   const handleTooltipClick = (type) => {
